@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATS Resume Checker</title>
+    <link rel="stylesheet" href="ats_resume.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>ATS Resume Checker</h1>
+      <label for="field">Select your field:</label>
+      <select id="field">
+        <option value="Healthcare and Medical">Healthcare and Medical</option>
+        <option value="Science and Research">Science and Research</option>
+        <option value="Engineering and Technology">
+          Engineering and Technology
+        </option>
+        <option value="Design and Creative Arts">
+          Design and Creative Arts
+        </option>
+        <option value="Education">Education</option>
+        <option value="Business and Finance">Business and Finance</option>
+        <option value="Law and Public Service">Law and Public Service</option>
+        <option value="Media and Communication">Media and Communication</option>
+      </select>
+      <input type="file" id="resume" accept=".pdf,.doc,.docx" />
+      <button id="checkBtn">Check Resume</button>
+      <div id="result"></div>
+    </div>
+    <script src="ats.reume.js"></script>
+  </body>
+</html>
