@@ -1,0 +1,22 @@
+
+.footer {
+    position: absolute;
+    background-color: black;
+    color: white;
+    font-size: 17px;
+    margin-top: 100%;
+    padding-left: 10%;
+    width: 100%;
+    max-width: 1400px;
+  }
+  
+  .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+  }
+  
+  .footer ul {
+    list-style: none;
+  }
+  
