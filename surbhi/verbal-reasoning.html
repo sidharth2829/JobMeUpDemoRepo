@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verbal Reasoning Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verbal Reasoning Test</h1>
+        <form id="reasoningForm">
+            <label for="q1">1. Analogies: Complete the analogy: Dog is to puppy as cat is to _.</label>
+            <input type="radio" name="q1" value="2"> kitten
+            <input type="radio" name="q1" value="4"> cub
+            <input type="radio" name="q1" value="6"> calf
+            <input type="radio" name="q1" value="0"> foal
+<br><br>
+            <label for="q2">2. Sentence Completion: Fill in the blank to complete the sentence: "The ____ of the novel left readers eagerly awaiting the sequel."</label>
+            <input type="radio" name="q2" value="2"> climax
+            <input type="radio" name="q2" value="4"> conclusion
+            <input type="radio" name="q2" value="6"> prologue
+            <input type="radio" name="q2" value="0"> epilogue
+            <br><br>
+            <label for="q3">3. Critical Reasoning: Which of the following statements weakens the argument the most? "All cats are mammals. Mittens is a cat. Therefore, Mittens is a mammal."</label>
+            <input type="radio" name="q3" value="2"> Some mammals are not cats.
+            <input type="radio" name="q3" value="4"> Mittens is a Siamese cat.
+            <input type="radio" name="q3" value="6"> Dogs are also mammals.
+            <input type="radio" name="q3" value="0"> Birds are not mammals.
+            <br><br>
+            <label for="q4">4. Analogical Reasoning: If CLOUD is to RAIN, then SUN is to:</label>
+            <input type="radio" name="q4" value="2"> Day
+            <input type="radio" name="q4" value="4"> Night
+            <input type="radio" name="q4" value="6"> Warmth
+            <input type="radio" name="q4" value="0"> Shine
+            <br><br>
+            <label for="q5">5. Logical Deduction: If all flowers are plants and some plants are trees, then it must be true that:</label>
+            <input type="radio" name="q5" value="2"> Some flowers are trees
+            <input type="radio" name="q5" value="4"> All trees are plants
+            <input type="radio" name="q5" value="6"> Some trees are flowers
+            <input type="radio" name="q5" value="0"> All flowers are trees
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('reasoningForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let totalScore = 0;
+            const answers = {
+                "q1": parseFloat(document.querySelector('input[name="q1"]:checked').value),
+                "q2": parseFloat(document.querySelector('input[name="q2"]:checked').value),
+                "q3": parseFloat(document.querySelector('input[name="q3"]:checked').value),
+                "q4": parseFloat(document.querySelector('input[name="q4"]:checked').value),
+                "q5": parseFloat(document.querySelector('input[name="q5"]:checked').value)
+            };
+
+            for (const key in answers) {
+                if (!isNaN(answers[key])) {
+                    totalScore += answers[key];
+                }
+            }
+
+            alert("Your total score is: " + totalScore.toFixed(1));
+        });
+    </script>
+</body>
+</html>
