@@ -13,15 +13,19 @@ fetch("questions.csv")
   .then((response) => response.text())
   .then((csv) => {
     loadQuestionsFromCSV(csv);
-    createQuestion(questions[0], 0);
+    // Don't call createQuestion here
   })
   .catch((error) => console.error("Error loading CSV file:", error));
 
 function loadQuestionsFromCSV(csv) {
   const lines = csv.split("\n");
+  lines.shift(); // Remove the header line
   lines.forEach((line) => {
-    const [, value] = line.split(",");
-    questions.push(value.trim());
+    const parts = line.split(",");
+    if (parts.length >= 2) {
+      const [qid, value] = parts;
+      questions.push({ qid, value: value.trim() });
+    }
   });
 
   console.log("Loaded questions:", questions);
@@ -31,7 +35,7 @@ function createQuestion(question, index) {
   const questionDiv = document.createElement("div");
   questionDiv.className = "question";
   questionDiv.innerHTML = `
-    <p>${question}</p>
+    <p>${question.value}</p>
     <div class="options">
       <button class="option-btn" data-value="1">Strongly Disagree</button> <br/>
       <button class="option-btn" data-value="2">Disagree</button><br/>
@@ -66,7 +70,17 @@ function createQuestion(question, index) {
       }
     });
   }
+
+  nextButton.disabled = false;
 }
+
+const startButton = document.getElementById("start-btn");
+startButton.addEventListener("click", () => {
+  startButton.style.display = "none";
+  document.getElementById("prev-btn").style.display = "inline-block";
+  document.getElementById("next-btn").style.display = "inline-block";
+  createQuestion(questions[0], 0);
+});
 
 function showScore() {
   quizContainer.style.display = "none";
@@ -76,6 +90,8 @@ function showScore() {
   score = (rawScore / maxScore) * 9 + 1; // Scale the raw score to a range between 1 and 10
   scoreContainer.textContent = `Your score is: ${score.toFixed(1)}`;
   scoreContainer.style.display = "block";
+  document.getElementById("prev-btn").style.display = "none";
+  document.getElementById("next-btn").style.display = "none";
 }
 
 prevButton.addEventListener("click", () => {
@@ -93,6 +109,7 @@ prevButton.addEventListener("click", () => {
     }
   }
 });
+
 nextButton.addEventListener("click", () => {
   const selectedOption =
     document.querySelector(".options .selected") ||
@@ -116,5 +133,3 @@ nextButton.addEventListener("click", () => {
 });
 
 nextButton.disabled = true;
-
-createQuestion(questions[0], 0);
