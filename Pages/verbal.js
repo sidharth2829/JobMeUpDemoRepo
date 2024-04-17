@@ -7,14 +7,12 @@ const questions = [
   {
     question:
       "Sentence Completion: Fill in the blank to complete the sentence: 'The ____ of the novel left readers eagerly awaiting the sequel'",
-    image: "perceptual-img2.jpg",
     options: ["A.climax", "B.conclusion", "C.prologue", "D.epilogue"],
     answer: "B",
   },
   {
     question:
       "Critical Reasoning: Which of the following statements weakens the argument the most? 'All cats are mammals. Mittens is a cat. Therefore, Mittens is a mammal.'",
-    image: "perceptual-img3.jpg",
     options: [
       "A.Some mammals are not cats.",
       "B.Mittens is a Siamese cat.",
@@ -25,14 +23,12 @@ const questions = [
   },
   {
     question: "Analogical Reasoning: If CLOUD is to RAIN, then SUN is to:",
-    image: "perceptual-img4.jpg",
     options: ["A.Day", "B.Night", "C.Warmth", "D.Shine"],
     answer: "A",
   },
   {
     question:
       "Logical Deduction: If all flowers are plants and some plants are trees, then it must be true that:",
-    image: "perceptual-img5.jpg",
     options: [
       "A.Some flowers are trees",
       "B.All trees are plants",
@@ -44,7 +40,6 @@ const questions = [
   {
     question:
       " Find the two words that best complete the following sentence: Though the movie received _______ reviews, the audience seemed to _______ it",
-    image: "perceptual-img6.jpg",
     options: [
       "A.mixed, enjoy",
       "B.positive, hate",
