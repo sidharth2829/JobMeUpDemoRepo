@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form id="abstractTestForm">
+        <h1>Abstract Aptitude Test</h1>
+         <h3>1. Which of the following pairs of words is most similar to the relationship between "tree" and "leaf"?</h3>
+         <input type="radio" id="a1" name="q1" value="a">
+         <label for="a1">Flower : Petal</label><br>
+         
+         <input type="radio" id="b1" name="q1" value="b">
+         <label for="b1">Car : Road</label><br>
+         
+         <input type="radio" id="c1" name="q1" value="c">
+         <label for="c1">Book : Page</label><br>
+         
+         <input type="radio" id="d1" name="q1" value="d">
+         <label for="d1">Dog : Tail</label><br>
+         
+         <h3>2. Identify the missing pattern in the sequence: 3, 6, 12, 24, ...</h3>
+         <input type="radio" id="a2" name="q2" value="a">
+         <label for="a2">36</label><br>
+         
+         <input type="radio" id="b2" name="q2" value="b">
+         <label for="b2">30</label><br>
+         
+         <input type="radio" id="c2" name="q2" value="c">
+         <label for="c2">48</label><br>
+         
+         <input type="radio" id="d2" name="q2" value="d">
+         <label for="d2">18</label><br>
+         
+
+         <h3>3. If all dogs have tails, and Max is a dog, what can we conclude?</h3>
+         <input type="radio" id="a3" name="q3" value="a">
+         <label for="a3">Max has a tail.</label><br>
+         
+         <input type="radio" id="b3" name="q3" value="b">
+         <label for="b3">Not all dogs have tails.</label><br>
+         
+         <input type="radio" id="c3" name="q3" value="c">
+         <label for="c3">Cats have tails too.</label><br>
+
+         <input type="radio" id="d3" name="q3" value="d">
+         <label for="d3">None of the above.</label><br>
+
+         <h3>4. What is the odd one out?</h3>
+         <input type="radio" id="a4" name="q4" value="a">
+         <label for="a4">Elephant</label><br>
+         
+         <input type="radio" id="b4" name="q4" value="b">
+         <label for="b4">Giraffe</label><br>
+         
+         <input type="radio" id="c4" name="q4" value="c">
+         <label for="c4">Lion</label><br>
+
+         <input type="radio" id="d4" name="q4" value="d">
+         <label for="d4">Tiger</label><br>
+
+       <h3>5. What is the next number in the sequence: 1, 4, 9, 16, 25, ...?</h3>
+ <input type="radio" id="a5" name="q5" value="a">
+ <label for="a5">36</label><br>
+ 
+ <input type="radio" id="b5" name="q5" value="b">
+ <label for="b5">49</label><br>
+ 
+ <input type="radio" id="c5" name="q5" value="c">
+ <label for="c5">64</label><br>
+
+ <input type="radio" id="d5" name="q5" value="d">
+ <label for="d5">81</label><br>
+
+ <h3>6. Find the odd one out:</h3>
+ <input type="radio" id="a6" name="q6" value="a">
+ <label for="a6">Circle</label><br>
+ 
+ <input type="radio" id="b6" name="q6" value="b">
+ <label for="b6">Square</label><br>
+ 
+ <input type="radio" id="c6" name="q6" value="c">
+ <label for="c6">Triangle</label><br>
+
+ <input type="radio" id="d6" name="q6" value="d">
+ <label for="d6">Sphere</label><br>
+
+ <h3>7. Complete the analogy:
+    Tree is to leaf as flower is to ___.</h3>
+ <input type="radio" id="a7" name="q7" value="a">
+ <label for="a7">Petal</label><br>
+ 
+ <input type="radio" id="b7" name="q7" value="b">
+ <label for="b7">Stem</label><br>
+ 
+ <input type="radio" id="c7" name="q7" value="c">
+ <label for="c7">Root</label><br>
+
+ <input type="radio" id="d7" name="q7" value="d">
+ <label for="d7">Branch</label><br>
+
+        <br><br>
+        <button type="button" onclick="calculateScore()">Submit</button>
+        <h3 id="score"></h3>
+    
+    </form>
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const answers = ['a', 'c', 'a', 'c', 'c','d','a'];
+            const form = document.getElementById('abstractTestForm');
+            const formData = new FormData(form);
+
+            for (let i = 1; i <= 7; i++) {
+                const selectedAnswer = formData.get('q' + i);
+                if (selectedAnswer === answers[i - 1]) {
+                    score += 1; 
+                }
+            }
+            let perscore=0;
+            perscore=(score/7)*100;
+            let normalized_score=0;
+            normalized_score=((perscore-0)*(10-1)/(100-0))+1;
+            normalized_score = parseFloat(normalized_score.toFixed(2)); 
+            document.getElementById('score').textContent = 'Your score: ' + normalized_score;
+        }
+    </script>
+</body>
+</html>
