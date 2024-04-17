@@ -176,11 +176,15 @@
             for (let i = 1; i <= 7; i++) {
                 const selectedAnswer = formData.get('q' + i);
                 if (selectedAnswer === answers[i - 1]) {
-                    score += 2;
+                    score += 1; // Increase score by 2 for each correct answer
                 }
             }
-    
-            document.getElementById('score').textContent = 'Your score: ' + score;
+            let perscore=0;
+            perscore=(score/7)*100;
+            let normalized_score=0;
+            normalized_score=((perscore-0)*(10-1)/(100-0))+1;
+            normalized_score = parseFloat(normalized_score.toFixed(2)); 
+            document.getElementById('score').textContent = 'Your score: ' + normalized_score;
         }
     </script>
 </body>
