@@ -118,7 +118,7 @@ function showScore() {
   quizContainer.style.display = "none";
   progressBar.style.display = "none";
 
-  let maxScorePerCategory = 10 * 5; // Assuming each question has a maximum score of 5
+  let maxScorePerCategory = 5 * questions.length; // Assuming each question has a maximum score of 5
   let scores = { ...score }; // Copy the current scores
 
   console.log("Scores:", scores);
