@@ -115,7 +115,7 @@
             for (let i = 1; i <= 7; i++) {
                 const selectedAnswer = formData.get('q' + i);
                 if (selectedAnswer === answers[i - 1]) {
-                    score += 2; // Increase score by 2 for each correct answer
+                    score += 1; // Increase score by 2 for each correct answer
                 }
             }
             let perscore=0;
