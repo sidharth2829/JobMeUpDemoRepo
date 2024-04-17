@@ -8,15 +8,22 @@
   </head>
   <body>
     <div class="quiz-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
       <div class="question-box">
         <div class="question-container" id="question-container">
           <!-- Questions will be added here dynamically -->
         </div>
+        <div class="btn-container">
+          <button id="start-btn">Start Quiz</button>
+          <button id="prev-btn" style="display: none">Previous</button>
+          <button id="next-btn" style="display: none">Next</button>
+          <button id="submit-btn" style="display: none">Submit Quiz</button>
+          <!-- New button for submitting quiz -->
+        </div>
       </div>
-      <form id="aptitudeTestForm">
-        <button type="submit">Submit</button>
-      </form>
-      <div id="score"></div>
+      <div class="score-container" id="score-container"></div>
     </div>
     <script src="perceptual_test.js"></script>
   </body>
