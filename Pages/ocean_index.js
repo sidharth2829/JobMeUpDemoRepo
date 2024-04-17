@@ -4,7 +4,13 @@ const scoreContainer = document.getElementById("score-container");
 const prevButton = document.getElementById("prev-btn");
 const nextButton = document.getElementById("next-btn");
 let currentQuestionIndex = 0;
-let score = 0;
+let score = {
+  E: 0,
+  N: 0,
+  A: 0,
+  C: 0,
+  O: 0,
+};
 
 let questions = [];
 
@@ -24,7 +30,8 @@ function loadQuestionsFromCSV(csv) {
     const parts = line.split(",");
     if (parts.length >= 2) {
       const [qid, value] = parts;
-      questions.push({ qid, value: value.trim() });
+      const category = qid.charAt(0);
+      questions.push({ qid, value: value.trim(), category });
     }
   });
 
@@ -34,6 +41,7 @@ function loadQuestionsFromCSV(csv) {
 function createQuestion(question, index) {
   const questionDiv = document.createElement("div");
   questionDiv.className = "question";
+  questionDiv.id = `question-${index}`; // Add unique ID to each question container
   questionDiv.innerHTML = `
     <p>${question.value}</p>
     <div class="options">
@@ -56,6 +64,30 @@ function createQuestion(question, index) {
       button.classList.add("selected");
 
       nextButton.disabled = false;
+
+      // Increment the corresponding score when an option is selected
+      const value = parseInt(button.getAttribute("data-value"));
+      switch (question.qid.charAt(0)) {
+        case "E":
+          score.E += value;
+          break;
+        case "N":
+          score.N += value;
+          break;
+        case "A":
+          score.A += value;
+          break;
+        case "C":
+          score.C += value;
+          break;
+        case "O":
+          score.O += value;
+          break;
+        default:
+          break;
+      }
+
+      console.log("Updated score:", score); // Add this line for debugging
     });
   });
 
@@ -85,13 +117,37 @@ startButton.addEventListener("click", () => {
 function showScore() {
   quizContainer.style.display = "none";
   progressBar.style.display = "none";
-  const maxScore = questions.length * 5; // Assuming each question has a maximum score of 5
-  const rawScore = score;
-  score = (rawScore / maxScore) * 9 + 1; // Scale the raw score to a range between 1 and 10
-  scoreContainer.textContent = `Your score is: ${score.toFixed(1)}`;
+
+  let maxScorePerCategory = 10 * 5; // Assuming each question has a maximum score of 5
+  let scores = { ...score }; // Copy the current scores
+
+  console.log("Scores:", scores);
+
+  // Scale the raw scores for each category to a range between 1 and 10
+  const scaledScores = {
+    E: (scores.E / maxScorePerCategory) * 9 + 1,
+    N: (scores.N / maxScorePerCategory) * 9 + 1,
+    A: (scores.A / maxScorePerCategory) * 9 + 1,
+    C: (scores.C / maxScorePerCategory) * 9 + 1,
+    O: (scores.O / maxScorePerCategory) * 9 + 1,
+  };
+
+  // Display the individual scores
+  scoreContainer.innerHTML = `
+    <p>Your score for Extraversion (E) is: ${scaledScores.E.toFixed(1)}</p>
+    <p>Your score for Neuroticism (N) is: ${scaledScores.N.toFixed(1)}</p>
+    <p>Your score for Agreeableness (A) is: ${scaledScores.A.toFixed(1)}</p>
+    <p>Your score for Conscientiousness (C) is: ${scaledScores.C.toFixed(1)}</p>
+    <p>Your score for Openness to Experience (O) is: ${scaledScores.O.toFixed(
+      1
+    )}</p>
+  `;
+
   scoreContainer.style.display = "block";
   document.getElementById("prev-btn").style.display = "none";
   document.getElementById("next-btn").style.display = "none";
+
+  console.log("Final scores:", scaledScores); // Final scores for each letter
 }
 
 prevButton.addEventListener("click", () => {
@@ -105,7 +161,7 @@ prevButton.addEventListener("click", () => {
     const selectedOption = document.querySelector(".options .selected");
     if (selectedOption) {
       const value = parseInt(selectedOption.getAttribute("data-value"));
-      score -= value; // Subtract the selected option's value from the score
+      score[questions[currentQuestionIndex].category] -= value; // Subtract the selected option's value from the score
     }
   }
 });
@@ -116,7 +172,7 @@ nextButton.addEventListener("click", () => {
     document.getElementById(`answer-${currentQuestionIndex}`);
   if (selectedOption) {
     const value = parseInt(selectedOption.getAttribute("data-value"));
-    score += value; // Add the selected option's value to the score
+    score[questions[currentQuestionIndex].category] += value; // Add the selected option's value to the score
     progressBar.style.width = `${
       ((currentQuestionIndex + 1) / questions.length) * 100
     }%`;
