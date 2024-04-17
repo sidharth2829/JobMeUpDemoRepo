@@ -49,8 +49,8 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-let score = 0;const answers = ["c", "c", "a", "b", "d", "d", "d"]; // Correct answers array
-
+let score = 0;
+const answers = ["c", "c", "a", "b", "d", "d", "d"]; // Correct answers array
 
 const quizContainer = document.getElementById("question-container");
 
