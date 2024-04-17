@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perceptual Aptitude Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            background-color: #fff;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        img {
+            display: block;
+            margin: 10px auto;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="aptitudeTestForm">
+        <h1>Perceptual Aptitude Test</h1>
+        <h3>1. Choose the correct top view. </h3>
+        <img src="perceptual-img1.jpg" width="500px" height="250px"><br>
+        <input type="radio" id="a1" name="q1" value="a">
+        <label for="a1">A</label><br>
+
+        <input type="radio" id="b1" name="q1" value="b">
+        <label for="b1">B</label><br>
+
+        <input type="radio" id="c1" name="q1" value="c">
+        <label for="c1">C</label><br>
+
+        <input type="radio" id="d1" name="q1" value="d">
+        <label for="d1">D</label><br>
+
+        <h3>2. In figure A, how many cubes have 3 of their sides painted?</h3>
+        <img src="perceptual-img2.jpg" width="500px" height="250px"><br>
+        <input type="radio" id="a2" name="q2" value="a">
+        <label for="a2">A. 4</label><br>
+
+        <input type="radio" id="b2" name="q2" value="b">
+        <label for="b2">B. 5</label><br>
+
+        <input type="radio" id="c2" name="q2" value="c">
+        <label for="c2">C. 6</label><br>
+
+        <input type="radio" id="d2" name="q2" value="d">
+        <label for="d2">D. 7</label><br>
+
+        <h3>3. Choose the correct option?</h3>
+        <img src="perceptual-img3.jpg" width="500px" height="250px"><br>
+        <input type="radio" id="a3" name="q3" value="a">
+        <label for="a3">A</label><br>
+
+        <input type="radio" id="b3" name="q3" value="b">
+        <label for="b3">B</label><br>
+
+        <input type="radio" id="c3" name="q3" value="c">
+        <label for="c3">C</label><br>
+
+        <input type="radio" id="d3" name="q3" value="d">
+        <label for="d3">D</label><br>
+
+        <h3>4. Choose the correct option.</h3>
+        <img src="perceptual-img4.jpg" width="500px" height="250px"><br>
+        <input type="radio" id="a4" name="q4" value="a">
+        <label for="a4">A</label><br>
+
+        <input type="radio" id="b4" name="q4" value="b">
+        <label for="b4">B</label><br>
+
+        <input type="radio" id="c4" name="q4" value="c">
+        <label for="c4">C</label><br>
+
+        <input type="radio" id="d4" name="q4" value="d">
+        <label for="d4">D</label><br>
+
+        <h3>5. Choose the correct FRONT VIEW. </h3>
+        <img src="perceptual-img5.jpg" width="500px" height="250px"><br>
+        <input type="radio" id="a5" name="q5" value="a">
+        <label for="a5">A</label><br>
+
+        <input type="radio" id="b5" name="q5" value="b">
+        <label for="b5">B</label><br>
+
+        <input type="radio" id="c5" name="q5" value="c">
+        <label for="c5">C</label><br>
+
+        <input type="radio" id="d5" name="q5" value="d">
+        <label for="d5">D</label><br>
+
+        <br><br>
+        <button type="button" onclick="calculateScore()">Submit</button>
+        <h3 id="score"></h3>
+    </form>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const answers = ['c', 'c', 'a', 'b', 'd'];
+            const form = document.getElementById('aptitudeTestForm');
+            const formData = new FormData(form);
+
+            for (let i = 1; i <= 5; i++) {
+                const selectedAnswer = formData.get('q' + i);
+                if (selectedAnswer === answers[i - 1]) {
+                    score += 2; // Increase score by 2 for each correct answer
+                }
+            }
+
+            document.getElementById('score').textContent = 'Your score: ' + score;
+        }
+    </script>
+</body>
+
+</html>
