@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Sunburst Chart</title>
+    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-sunburst.min.js"></script>
+    <style type="text/css">      
+      html, body, #container { 
+        width: 100%; 
+        height: 100%; 
+        margin: 0; 
+        padding: 0; 
+      } 
+.chart-title {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      anychart.onDocumentReady(function(){
+        var data = [
+  {
+    name: "Careers",
+    children: [
+      {
+        name: "Education",
+        children: [
+          { name: "Teacher", value: 100 },
+          { name: "Principal", value: 30 },
+          { name: "Professor", value: 50 },
+          { name: "Guidance Counselor", value: 20 },
+          { name: "Curriculum Developer", value: 15 },
+          { name: "Special Education Teacher", value: 25 }
+        ]
+      },
+      {
+        name: "Medicine",
+        children: [
+          { name: "Doctor", value: 150 },
+          { name: "Nurse", value: 80 },
+          { name: "Pharmacist", value: 40 },
+          { name: "Surgeon", value: 60 },
+          { name: "Dentist", value: 35 },
+          { name: "Psychiatrist", value: 30 }
+        ]
+      },
+      {
+        name: "Technology",
+        children: [
+          { name: "Software Engineer", value: 120 },
+          { name: "Data Scientist", value: 60 },
+          { name: "Network Administrator", value: 30 },
+          { name: "UX/UI Designer", value: 40 },
+          { name: "Cybersecurity Analyst", value: 35 },
+          { name: "AI/Machine Learning Engineer", value: 50 }
+        ]
+      },
+      {
+        name: "Business",
+        children: [
+          { name: "CEO", value: 50 },
+          { name: "Accountant", value: 80 },
+          { name: "Marketing Manager", value: 70 },
+          { name: "Human Resources Manager", value: 45 },
+          { name: "Financial Analyst", value: 55 },
+          { name: "Operations Manager", value: 60 }
+        ]
+      },
+      {
+        name: "Arts & Humanities",
+        children: [
+          { name: "Writer", value: 40 },
+          { name: "Artist", value: 35 },
+          { name: "Historian", value: 25 },
+          { name: "Musician", value: 30 },
+          { name: "Actor/Actress", value: 45 },
+          { name: "Cultural Anthropologist", value: 20 }
+        ]
+      },
+      {
+        name: "Engineering",
+        children: [
+          { name: "Civil Engineer", value: 50 },
+          { name: "Mechanical Engineer", value: 60 },
+          { name: "Electrical Engineer", value: 55 },
+          { name: "Aerospace Engineer", value: 40 },
+          { name: "Chemical Engineer", value: 35 },
+          { name: "Environmental Engineer", value: 30 }
+        ]
+      },
+      {
+        name: "Healthcare",
+        children: [
+          { name: "Physical Therapist", value: 40 },
+          { name: "Occupational Therapist", value: 35 },
+          { name: "Speech-Language Pathologist", value: 30 },
+          { name: "Medical Laboratory Technologist", value: 25 },
+          { name: "Dietitian", value: 20 }
+        ]
+      }
+    ]
+  }
+];
+
+
+        var chart = anychart.sunburst(data, "as-tree");
+   chart.title("Career Exploration Resources");
+        chart.container("container");
+
+chart.listen("pointClick", function(e) {
+        // Check if the clicked point is a Doctor
+        if (e.point.get("name") === "Doctor") {
+          window.location.href = "doctor.html";
+        }
+        // You can add more conditions for other career fields here
+      });
+
+        chart.draw();
+      });
+    </script>
+  </body>
+</html>
