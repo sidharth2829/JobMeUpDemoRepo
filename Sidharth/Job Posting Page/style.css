@@ -114,8 +114,8 @@ html {
     cursor: -webkit-grab;
   }
   .main .scroll .card {
-    width: 16rem;
-    height: auto;
+    width: 20rem;
+    height: 35rem;
     flex: 0 0 auto;
     margin: 0 0.75rem;
     border: none;
