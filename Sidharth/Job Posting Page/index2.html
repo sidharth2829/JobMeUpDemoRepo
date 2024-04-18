@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Remote Job Listings</h1>
+    <form id="categoryForm">
+        <label for="categories">Select job categories:</label><br>
+        <input type="checkbox" id="softwareDev" name="category" value="software-dev">
+        <label for="softwareDev">Software Development</label><br>
+        <input type="checkbox" id="customerService" name="category" value="customer-support">
+        <label for="customerService">Customer Service</label><br>
+        <input type="checkbox" id="design" name="category" value="design">
+        <label for="design">Design</label><br>
+        <input type="checkbox" id="marketing" name="category" value="marketing">
+        <label for="marketing">Marketing</label><br>
+        <input type="checkbox" id="salesBusiness" name="category" value="sales-business">
+        <label for="salesBusiness">Sales / Business</label><br>
+        <input type="checkbox" id="product" name="category" value="product">
+        <label for="product">Product</label><br>
+        <input type="checkbox" id="projectManagement" name="category" value="project-management">
+        <label for="projectManagement">Project Management</label><br>
+        <input type="checkbox" id="data" name="category" value="data">
+        <label for="data">Data Analysis</label><br>
+        <input type="checkbox" id="devops" name="category" value="devops">
+        <label for="devops">DevOps / Sysadmin</label><br>
+        <input type="checkbox" id="financeLegal" name="category" value="finance-legal">
+        <label for="financeLegal">Finance / Legal</label><br>
+        <input type="checkbox" id="hr" name="category" value="hr">
+        <label for="hr">Human Resources</label><br>
+        <input type="checkbox" id="qa" name="category" value="qa">
+        <label for="qa">QA</label><br>
+        <input type="checkbox" id="writing" name="category" value="writing">
+        <label for="writing">Writing</label><br>
+        <input type="checkbox" id="allOthers" name="category" value="all-others">
+        <label for="allOthers">All Others</label><br>
+        <button type="submit">Search</button>
+    </form>
+    <main class="main">
+        <div class="container">
+            <div class="scroll">
+                <!-- Job cards will be dynamically added here -->
+            </div>
+        </div>
+    </main>
+<script src="script.js"></script>
+</body>
+</html>
