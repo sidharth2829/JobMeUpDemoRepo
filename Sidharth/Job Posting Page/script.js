@@ -9,13 +9,13 @@ document.querySelector('.skills-flex-container').addEventListener('click', async
         const selectedCategory = event.target.dataset.category;
 
         const allBoxes = document.querySelectorAll('.box');
+        
         allBoxes.forEach(box => {
-            box.classList.remove('selected');
+            box.style.border = '';
         });
 
-        // Apply border to the clicked box
-        event.target.classList.add('selected');
-
+        event.target.style.border = '10px solid white';
+        
         try {
             const response = await fetch(`https://remotive.io/api/remote-jobs?category=${selectedCategory}&limit=20`);
             const data = await response.json();
@@ -66,7 +66,7 @@ document.querySelector('.skills-flex-container').addEventListener('click', async
             
                 jobContainer.appendChild(jobCard);
             });
-            
+            event.target.classList.add('selected');
         } catch (error) {
             console.error('Error fetching job listings:', error);
             // Display error message

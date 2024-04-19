@@ -119,9 +119,12 @@ img {
     transform: scale(0.95, 1.05);
   }
 }
-.box.selected {
-    border: 2px solid white;
+.skills .skills-flex-container .box .selected {
+    border: 20px solid rgb(255, 243, 243);
 }
+.box {
+    cursor: pointer;
+  }
 
 #last-box .image img{
 margin-left: 46.7%;
