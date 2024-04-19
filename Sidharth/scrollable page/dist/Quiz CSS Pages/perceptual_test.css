@@ -17,6 +17,19 @@ body {
   background-color: transparent;
   font-size: 20px;
   font-family: Helvetica;
+  position: relative;
+  animation: animateleft 1s;
+}
+
+@keyframes animateleft {
+  from {
+    left: -300px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 #start-btn-8 {
@@ -32,6 +45,7 @@ body {
   font-size: 18px;
   font-family: Helvetica;
   transition: all 0.3s ease;
+  animation: animateleft 1s;
 }
 
 .options-8 button:hover {
