@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #002733;
+  background-color:#3e1042;
 }
 
 img {
@@ -56,11 +56,11 @@ img {
 }
 .skills .skills-flex-container .box {
   flex: 1 1 15%;
-  background: #001925;
+  background:#3D1F3A;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 24px;
   padding: 25px;
   text-align: center;
-  border: 10px solid #013747;
+  border: 10px solid #A262A8;
   transition: all 0.3s ease-in;
 }
 .skills .skills-flex-container .box .image {
