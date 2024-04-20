@@ -6,7 +6,7 @@ var unibodyCanvas = document.createElement("canvas");
 var bodyLinesCanvas = document.createElement("canvas");
 // document.body.appendChild( unibodyCanvas );
 // document.body.appendChild( bodyLinesCanvas );
-var illoSize = 88;
+var illoSize = 132;
 var minWindowSize = Math.min(window.innerWidth, window.innerHeight);
 var zoom = Math.floor(minWindowSize / illoSize);
 
