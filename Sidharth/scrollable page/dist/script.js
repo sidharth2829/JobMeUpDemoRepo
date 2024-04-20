@@ -7,7 +7,7 @@ import lodashThrottle from "https://cdn.skypack.dev/lodash.throttle@4.1.1";
 
 
 window.onscroll = function () {
-    const section5 = document.getElementById('section_5'); // Replace 'section_5' with the actual ID of section 5
+    const section5 = document.getElementById('section_8'); // Replace 'section_5' with the actual ID of section 5
     const windowHeight = window.innerHeight;
     const sectionBottom = section5.getBoundingClientRect().bottom;
 
