@@ -13,13 +13,14 @@
 </head>
 
 <body>
+    <div>
     <div class="nav">
         <button id="cmd" onclick="printpdf()" class="navbtn"><i class="fas fa-download"></i></button>
-        <form>
+        <!-- <form>
             <input type="hidden" id="custinfo" name="custinfo">
             <button class="navbtn"><i class="fas fa-save"></i></button>
-        </form>
-        <button class="navbtn" href=""><i class="fas fa-home"></i></button>
+        </form> -->
+        <button class="navbtn" href="/"><i class="fas fa-home"></i></button>
     </div>
 
     <div class="resume" id="resume">
@@ -48,9 +49,9 @@
                     <div>
                         <div class="skill"><span><i class="fas fa-chevron-circle-right"></i></span> <span contenteditable="true"> Skill </span></div>
                         <div id="skills"></div>
-                        <button id="skilladd" type="button" class="btn btn-success m-2" onclick="addskill()"><i
-                                class="fas fa-plus-circle"></i></button>
-                        <button id="skillrem" type="button" class="btn btn-danger m-2" onclick="remskill()"><i
+                        <br>
+                        <button class="button1" id="skilladd" type="button" onclick="addskill()"><i class="fas fa-plus-circle"></i></button>
+                        <button class="button2" id="skillrem" type="button" onclick="remskill()"><i
                                 class="fas fa-minus-circle"></i></button>
                     </div>
                     <br><span class="title">LANGUAGES</span><br><br>
@@ -58,10 +59,11 @@
                         <div class="language"><span><i class="fas fa-chevron-circle-right"></i></span><span
                                 contenteditable="true"> Language Name</span><span contenteditable="true"></span></div>
                         <div id="languages"></div>
-                        <button id="langadd" type="button" class="btn btn-success m-2" onclick="addLang()"><i
+                        <br>
+                        <button id="langadd" type="button" class="button1" onclick="addLang()"><i
                                 class="fas fa-plus-circle"></i></button>
 
-                        <button id="langrem" type="button" class="btn btn-danger m-2" onclick="remLang()"><i
+                        <button id="langrem" type="button" class="button2" onclick="remLang()"><i
                                 class="fas fa-minus-circle"></i></button>
                     </div>
                     <br><span class="title">ACHIEVEMENTS</span><br><br>
@@ -69,10 +71,11 @@
                         <div class="achieve"><span><i class="fas fa-chevron-circle-right"></i></span><span
                                 contenteditable="true"> Achievement</span></div>
                         <div id="achievement"></div>
-                        <button id="achadd" type="button" class="btn btn-success m-2" onclick="addAch()"><i
+                        <br>
+                        <button id="achadd" type="button" class="button1" onclick="addAch()"><i
                             class="fas fa-plus-circle"></i></button>
 
-                        <button id="achrem" type="button" class="btn btn-danger m-2" onclick="remAch()"><i
+                        <button id="achrem" type="button" class="button2" onclick="remAch()"><i
                             class="fas fa-minus-circle"></i></button>
                         
                     </div>
@@ -81,10 +84,11 @@
                         <div class="interest"><span><i class="fas fa-chevron-circle-right"></i></span><span
                                 contenteditable="true"> Interest</span></div>
                         <div id="interest"></div>
-                        <button id="Intadd" type="button" class="btn btn-success m-2" onclick="addInt()"><i
+                        <br>
+                        <button id="Intadd" type="button" class="button1" onclick="addInt()"><i
                                 class="fas fa-plus-circle"></i></button>
 
-                        <button id="Intrem" type="button" class="btn btn-danger m-2" onclick="remInt()"><i
+                        <button id="Intrem" type="button" class="button2" onclick="remInt()"><i
                                 class="fas fa-minus-circle"></i></button>
                     </div>
                 </div>
@@ -93,8 +97,8 @@
                 <div class="rightside">
                     <span class="title">PROFILE</span><br><br>
                     <div contenteditable="true">
-                        Here u can write something about yourself that you want your interviewer to know. Try to keep it brief and do not include information which is
-                        already written in your resume.</div>
+                        <div class="profiletxt">Here u can write something about yourself that you want your interviewer to know. Try to keep it brief and do not include information which is
+                        already written in your resume.</div></div>
                     <br><br><span class="title">EDUCATION</span><br><br>
                     <div>
                         <div id="education">
@@ -106,10 +110,10 @@
                             </div>
                         </div>
 
-                        <button id="eduadd" type="button" class="btn btn-success m-2" onclick="addedu()"><i
+                        <button id="eduadd" type="button" class="button1" onclick="addedu()"><i
                                 class="fas fa-plus-circle"></i></button>
 
-                        <button id="edurem" type="button" class="btn btn-danger m-2" onclick="remedu()"><i
+                        <button id="edurem" type="button" class="button2" onclick="remedu()"><i
                                 class="fas fa-minus-circle"></i></button>
                     </div>
                     <br><span class="title">EXPERIENCE</span><br><br>
@@ -122,10 +126,10 @@
                             </div>
                         </div>
 
-                        <button id="expadd" type="button" class="btn btn-success m-2 "  onclick="addexp()"><i
+                        <button id="expadd" type="button" class="button1"  onclick="addexp()"><i
                                 class="fas fa-plus-circle"></i></button>
 
-                        <button id="exprem" type="button" class="btn btn-danger m-2" onclick="remexp()"><i
+                        <button id="exprem" type="button" class="button2" onclick="remexp()"><i
                                 class="fas fa-minus-circle"></i></button>
                     </div>
 <br>
@@ -139,23 +143,26 @@
                             </div>
                         </div>
 
-                        <button id="proadd" type="button" class="btn btn-success m-2" onclick="addpro()"><i
+                        <button id="proadd" type="button" class="button1" onclick="addpro()"><i
                                 class="fas fa-plus-circle"></i></button>
 
-                        <button id="prorem" type="button" class="btn btn-danger m-2" onclick="rempro()"><i
+                        <button id="prorem" type="button" class="button2" onclick="rempro()"><i
                                 class="fas fa-minus-circle"></i></button>
                     </div>
                     
                 </div>
         </section>
     </div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
 </body>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
-
 <script src="{{ url_for('static', filename='resume.js') }}"></script>
-
 
 </html>
