@@ -12,10 +12,10 @@ html {
 }
 
 body {
-  --activeColor: rgb(240 240 240);
+  --activeColor: rgba(101, 81, 81, 0);
   --navBgColor: rgb(37 38 41);
   --navTextColor: rgb(144 144 150);
-  --mainBg: rgb(20 20 23);
+  --mainBg: rgba(92, 92, 128, 0);
   font-family: "Syncopate", sans-serif;
   min-height: 100vh;
   margin: 0;
@@ -31,13 +31,13 @@ img {
 }
 
 section {
-  /--h: calc(var(--i) * 30);/
+  --h: calc(var(--i) * 30);
   min-height: 100vh;
   padding: 8rem 0 max(5vh, 2rem);
   display: flex;
   justify-content: center;
   align-items: center;
-  /background-color: hsl(var(--h, 0), 25%, 55%);/
+  background-color: hsl(var(--h, 0), 25%, 55%);
 }
 #section_1 {
   /* background-color: #261a7a; */
@@ -238,3 +238,19 @@ section {
   align-items: center;
   background: linear-gradient(to bottom, #261a7a, #201569); /* Adjust colors as needed */
 }
+
+.sticky-div {
+  position: sticky;
+  z-index: 1;
+  
+  top: 0; /* Adjust this value as needed */
+  left: 150rem;
+  
+
+  height: 100vh;
+  width: 20%; /* Adjust the width as needed */
+  background-color: #ffffff; /* Adjust background color as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds div height */
+}
+
