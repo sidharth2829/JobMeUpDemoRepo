@@ -79,7 +79,7 @@ def login():
 
 @app.route("/")
 def landing_page():
-    return render_template('landing-page.html')
+    return render_template('landing-page1.html')
 
 
 @app.route("/resume")
