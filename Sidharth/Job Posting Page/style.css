@@ -25,7 +25,7 @@ html {
     font-weight: 400;
     line-height: 1.5;
     color: #252a32;
-    background: #312f2f;
+    background: #3e1042;
   }
   
   a,
@@ -118,11 +118,12 @@ html {
     height: 35rem;
     flex: 0 0 auto;
     margin: 0 0.75rem;
-    border: none;
+    border: 10px solid #A262A8;
     outline: none;
-    border-radius: 0.25rem;
-    color: #252a32;
-    background: #ffffff;
+    /* border-radius: 0.25rem; */
+    color: #ffffff;
+    background:#3D1F3A;
+
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
   .main .scroll .card-image {
@@ -158,10 +159,11 @@ html {
     margin: 0 0.75rem;
     border: none;
     outline: none;
-    border-radius: 0.25rem;
+    /* border-radius: 0.25rem; */
     color: #252a32;
     background: #ffffff;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 20px solid #A262A8;
 }
 .card .card-image {
     position: relative;
