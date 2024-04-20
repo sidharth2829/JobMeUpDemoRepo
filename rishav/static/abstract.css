@@ -6,7 +6,7 @@ body {
   background-size: cover; /* Ensure the background image covers the entire screen */
 }
 
-.quiz-container-5 {
+.quiz-container-7 {
   max-width: 500px;
   max-height: 800px;
   margin: 50px auto;
@@ -31,11 +31,13 @@ body {
     opacity: 1;
   }
 }
-#start-btn-5 {
+
+#start-btn-7 {
   display: block;
   margin: 0 auto;
 }
-.options-5 button {
+
+.options-7 button {
   margin: 0 0 2em 0;
   background-color: transparent;
   border: 1px solid #836255;
@@ -46,16 +48,16 @@ body {
   animation: animateleft 1s;
 }
 
-.options-5 button:hover {
+.options-7 button:hover {
   font-weight: bold; /* Bolden the text on hover */
 }
 
-.options-5 .selected-5 {
+.options-7 .selected {
   background-color: #6c210c; /* Highlight the selected option */
   color: #fff; /* Change text color to white */
 }
 
-.progress-bar-5 {
+.progress-bar-7 {
   width: 100%;
   height: 20px;
   background-color: rgba(99, 68, 68, 0.5);
@@ -63,14 +65,14 @@ body {
   margin-bottom: 10px;
 }
 
-.progress-5 {
+.progress-7 {
   width: 0;
   height: 100%;
   background-color: #6c210c;
   border-radius: 10px;
 }
 
-.question-box-5 {
+.question-box-7 {
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 5px;
@@ -80,17 +82,17 @@ body {
   font-family: Helvetica;
 }
 
-.question-container-5 {
+.question-container-7 {
   margin-bottom: 20px;
   background-color: transparent;
 }
 
-.question-5 {
+.question-7 {
   margin-bottom: 10px;
   color: #000;
 }
 
-.btn-container-5 {
+.btn-container-7 {
   text-align: center;
 }
 
@@ -105,11 +107,11 @@ button {
   font-family: Helvetica;
 }
 
-.score-container-5 {
+.score-container-7 {
   font-weight: bold;
   color: white;
 }
-img {
-  height: 300px;
-  width: 500px;
+.options-7 button.selected {
+  background-color: #6c210c;
+  color: #fff;
 }

@@ -2,35 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Quiz-Timeline</title>
-    <link
-      rel="stylesheet"
-      href="/Sidharth/scrollable page/dist/Quiz CSS Pages/spatial-test-css.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/Sidharth/scrollable page/dist/Quiz CSS Pages/ocean_index.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/Sidharth/scrollable page/dist/Quiz CSS Pages/verbal.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/Sidharth/scrollable page/dist/Quiz CSS Pages/abstract.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/Sidharth/scrollable page/dist/Quiz CSS Pages/perceptual_test.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/Sidharth/scrollable page/dist/Quiz CSS Pages/numerical-test.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./input.css">
-    <link rel="stylesheet" href="/Sidharth/scrollable page/dist/bear animation/bear.css">
-    <link rel="stylesheet" href="masc.css" />
+    <title>QUIZ</title>
+    <link href="{{ url_for('static', filename='quiz2.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='quiz3.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='abstract.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='numerical-test-css.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='ocean_index.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='perceptual_test.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='verbal.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='spatial-test-css.css') }}" rel="stylesheet">
   </head>
   <body>
     <!-- partial:index.partial.html -->
@@ -112,9 +92,6 @@
     </nav>
 
     <main>
-      <div class="sticky-div">
-        <canvas class="illo"></canvas>
-      </div>
       <section id="section_1" style="--i: 0"></section>
       <section id="section_2" style="--i: 1">
         <div class="container">
@@ -136,7 +113,7 @@
             <div class="btn-container-3">
               <button id="start-btn-3">Start Quiz</button>
               <button id="prev-btn-3" style="display: none">Previous</button>
-              <button id="next-btn-3" style="display: none">Next<br/><br/></button>
+              <button id="next-btn-3" style="display: none">Next</button>
               <button id="submit-btn-3" style="display: none">
                 Submit Quiz
               </button>
@@ -249,8 +226,8 @@
         </div>
       </section>
       <section id="section_9" style="--i: 9">
-        <form id="testForm">
-          <div class="input-options">
+        <!-- <form id="testForm"  action="{{ url_for('predict')}}" method="post">
+        
             <label for="oTest">O TEST:</label>
             <input type="text" id="oTest" name="oTest"><br>
             <label for="cTest">C TEST:</label>
@@ -271,8 +248,22 @@
             <input type="text" id="verbalTest" name="verbalTest"><br>
             <label for="spatialTest">Spatial TEST:</label>
             <input type="text" id="spatialTest" name="spatialTest"><br>
-          </div>
+          
           <button type="submit">Submit</button>
+        </form> -->
+        <form  action="{{ url_for('predict')}}" method="post"   >
+          <input type="text" name="test1" placeholder="Test1"  id="test1" />
+            <input type="text" name="test2" placeholder="Test2"  id="test2" />
+        <input type="text" name="test3" placeholder="Test3"   id="test3" />
+            <input type="text" name="test4" placeholder="Test4"   id="test4" />
+            <input type="text" name="test5" placeholder="Test5" id="test5" />
+        <input type="text" name="test6" placeholder="Test6"  id="test6" />
+            <input type="text" name="test7" placeholder="Test7"  id="test7" />
+            <input type="text" name="test8" placeholder="Test8"  id="test8" />
+        <input type="text" name="test9" placeholder="Test9"  id="test9" />
+            <input type="text" name="test10" placeholder="Test10"  id="test10" />
+    
+            <button type="submit" class="btn btn-primary btn-block btn-large" >Submit</button>
         </form>
         
       </section>
@@ -282,15 +273,13 @@
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
     <script src="https://assets.codepen.io/16327/InertiaPlugin.min.js"></script>
-    <script type="module" src="./script.js"></script>
-    <script src="./input.js"></script>
-    <script src="/Sidharth/scrollable page/dist/Quiz JS pages/ocean_index.js"></script>
-    <script src="/Sidharth/scrollable page/dist/Quiz JS pages/spatial-test.js"></script>
-    <script src="/Sidharth/scrollable page/dist/Quiz JS pages/verbal.js"></script>
-    <script src="/Sidharth/scrollable page/dist/Quiz JS pages/abstract.js"></script>
-    <script src="/Sidharth/scrollable page/dist/Quiz JS pages/perceptual_test.js"></script>
-    <script src="/Sidharth/scrollable page/dist/Quiz JS pages/numerical-test.js"></script>
-    <script src="https://unpkg.com/zdog@1/dist/zdog.dist.js"></script>
-    <script src="/Sidharth/scrollable page/dist/bear animation/bear.js"></script
+    <script src="{{ url_for('static', filename='quiz2.js') }}"></script>
+    <script src="{{ url_for('static', filename='quiz3.js') }}"></script>
+    <script src="{{ url_for('static', filename='verbal.js') }}"></script>
+    <script src="{{ url_for('static', filename='spatial-test.js') }}"></script>
+    <script src="{{ url_for('static', filename='perceptual_test.js') }}"></script>
+    <script src="{{ url_for('static', filename='ocean_index.js') }}"></script>
+    <script src="{{ url_for('static', filename='numerical_test.js') }}"></script>
+    <script src="{{ url_for('static', filename='abstract.js') }}"></script>
   </body>
 </html>

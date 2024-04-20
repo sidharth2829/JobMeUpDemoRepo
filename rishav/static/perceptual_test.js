@@ -1,67 +1,69 @@
 document.addEventListener("DOMContentLoaded", function () {
   const questions = [
     {
-      question: "What would the 3D shape look like from above?",
-      image: "/Sidharth/scrollable page/dist/Spatial images/spatial_1.png",
+      question: "Choose the correct top view.",
+      image: "static/perceptual-img1.jpg",
+      options: ["A", "B", "C", "D"],
+      answer: "C",
+    },
+    {
+      question: "In figure A, how many cubes have 3 of their sides painted?",
+      image: "static/perceptual-img2.jpg",
+      options: ["A.4", "B.5", "C.6", "D.7"],
+      answer: "C",
+    },
+    {
+      question: "Choose the correct option?",
+      image: "static/perceptual-img3.jpg",
       options: ["A", "B", "C", "D"],
       answer: "A",
     },
     {
-      question: "Which of the given shapes is the correct mirror image?",
-      image: "/Sidharth/scrollable page/dist/Spatial images/spatial_2.png",
+      question: "Choose the correct option?",
+      image: "static/perceptual-img4.jpg",
       options: ["A", "B", "C", "D"],
-      answer: "A",
-    },
-    {
-      question:
-        "Which of the given shapes is the same 3D shape but in a different position?",
-      image: "/Sidharth/scrollable page/dist/Spatial images/spatial_3.png",
-      options: ["A", "B", "C"],
-      answer: "D",
-    },
-    {
-      question:
-        "Choose the shape that could be the result if these two shapes were combined and no other changes were made.",
-      image: "/Sidharth/scrollable page/dist/Spatial images/spatial_4.png",
-      options: ["A", "B", "C"],
       answer: "B",
     },
     {
-      question: "Which of the boxes comes next in the sequence?",
-      image: "/Sidharth/scrollable page/dist/Spatial images/spatial_5.png",
-      options: ["A", "B", "C", "D", "E"],
-      answer: "D",
-    },
-    {
-      question:
-        "If the net was folded into a cube, which of the given shapes would it look like?",
-      image: "/Sidharth/scrollable page/dist/Spatial images/spatial_6.png",
+      question: "Choose the correct FRONT VIEW",
+      image: "static/perceptual-img5.jpg",
       options: ["A", "B", "C", "D"],
       answer: "D",
     },
     {
-      question: " Which of the boxes comes next in the sequence?",
-      image: "/Sidharth/scrollable page/dist/Spatial images/spatial_7.png",
-      options: ["A", "B", "C", "D", "E"],
-      answer: "A",
+      question: " Choose the correct option",
+      image: "static/perceptual-img6.jpg",
+      options: ["A", "B", "C", "D"],
+      answer: "D",
+    },
+    {
+      question: "Arrange in increasing order of angle magnitude",
+      image: "static/perceptual-img7.jpg",
+      options: [
+        "A. 2 - 1 - 3 - 4",
+        "B. 1 - 2 - 3 - 4",
+        "C. 3 - 2 - 1 - 4",
+        "D. 2 - 3 - 1 - 4",
+      ],
+      answer: "D",
     },
   ];
 
   let currentQuestionIndex = 0;
   let score = 0;
   let quizCompleted = false; // Flag to track if quiz has been completed
-  const quizContainer = document.getElementById("question-container-5");
+  const quizContainer = document.getElementById("question-container-8");
 
   function createQuestion(question, index) {
     quizContainer.innerHTML = `
-                        <div class="question">
+                        <div class="question-8">
                             <p>${question.question}</p>
                             ${
                               question.image
                                 ? `<img src="${question.image}" alt="Question Image">`
                                 : ""
                             }
-                            <ul class="options">
+                            <ul class="options-8">
                                 ${question.options
                                   .map(
                                     (option, i) =>
@@ -73,15 +75,16 @@ document.addEventListener("DOMContentLoaded", function () {
                             </ul>
                         </div>
                     `;
-    const options = quizContainer.querySelectorAll(".options-5 button");
+
+    const options = quizContainer.querySelectorAll(".options-8 button");
     options.forEach((option) => {
       option.addEventListener("click", () => {
         const selectedAnswer = option.getAttribute("data-answer");
         if (selectedAnswer === question.answer.toLowerCase()) {
           score += 1; // Increase score by 1 for each correct answer
         }
-        options.forEach((opt) => opt.classList.remove("selected-5")); // Remove selected class from all options
-        option.classList.add("selected-5"); // Add selected class to the clicked option
+        options.forEach((opt) => opt.classList.remove("selected")); // Remove selected class from all options
+        option.classList.add("selected"); // Add selected class to the clicked option
         option.disabled = true; // Disable the selected option
         // Automatically move to the next question after 1 second
       });
@@ -102,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  document.getElementById("next-btn-5").addEventListener("click", nextQuestion);
+  document.getElementById("next-btn-8").addEventListener("click", nextQuestion);
 
   function prevQuestion() {
     if (currentQuestionIndex > 0) {
@@ -114,31 +117,31 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateProgressBar() {
     if (currentQuestionIndex >= 0) {
       const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
-      document.getElementById("progress-5").style.width = progress + "%";
+      document.getElementById("progress-8").style.width = progress + "%";
     }
   }
 
   function showScore() {
     const perscore = (score / questions.length) * 100;
     const normalized_score = ((perscore - 0) * (10 - 1)) / (100 - 0) + 1;
-    document.getElementById("score-container-5").textContent =
+    document.getElementById("score-container-8").textContent =
       "Your score: " + parseFloat(normalized_score.toFixed(2));
-    document.getElementById("submit-btn-5").style.display = "none"; // Hide the submit button
+    document.getElementById("submit-btn-8").style.display = "none"; // Hide the submit button
   }
 
-  document.getElementById("start-btn-5").addEventListener("click", () => {
-    document.getElementById("start-btn-5").style.display = "none";
-    document.getElementById("prev-btn-5").style.display = "inline-block"; // Show the prev button
-    document.getElementById("next-btn-5").style.display = "inline-block"; // Show the next button
+  document.getElementById("start-btn-8").addEventListener("click", () => {
+    document.getElementById("start-btn-8").style.display = "none";
+    document.getElementById("prev-btn-8").style.display = "inline-block"; // Show the prev button
+    document.getElementById("next-btn-8").style.display = "inline-block"; // Show the next button
     createQuestion(questions[currentQuestionIndex], currentQuestionIndex);
   });
 
   document
-    .getElementById("aptitudeTestForm-5")
+    .getElementById("aptitudeTestForm-8")
     .addEventListener("submit", (e) => {
       e.preventDefault();
     });
 
-  document.getElementById("prev-btn-5").addEventListener("click", prevQuestion);
-  document.getElementById("next-btn-5").addEventListener("click", nextQuestion);
+  document.getElementById("prev-btn-8").addEventListener("click", prevQuestion);
+  document.getElementById("next-btn-8").addEventListener("click", nextQuestion);
 });

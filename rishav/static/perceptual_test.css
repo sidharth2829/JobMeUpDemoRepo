@@ -3,11 +3,11 @@ body {
   margin: 0;
   padding: 0;
   background-image: url(background.jpg);
-  background-size: cover; /* Ensure the background image covers the entire screen */
+  background-size: cover;
 }
 
-.quiz-container-5 {
-  max-width: 500px;
+.quiz-container-8 {
+  max-width: auto;
   max-height: 800px;
   margin: 50px auto;
   padding: 20px;
@@ -31,31 +31,33 @@ body {
     opacity: 1;
   }
 }
-#start-btn-5 {
+
+#start-btn-8 {
   display: block;
   margin: 0 auto;
 }
-.options-5 button {
+
+.options-8 button {
   margin: 0 0 2em 0;
   background-color: transparent;
   border: 1px solid #836255;
   color: #000;
   font-size: 18px;
   font-family: Helvetica;
-  transition: all 0.3s ease; /* Add a smooth transition for hover effect */
+  transition: all 0.3s ease;
   animation: animateleft 1s;
 }
 
-.options-5 button:hover {
-  font-weight: bold; /* Bolden the text on hover */
+.options-8 button:hover {
+  font-weight: bold;
 }
 
-.options-5 .selected-5 {
-  background-color: #6c210c; /* Highlight the selected option */
-  color: #fff; /* Change text color to white */
+.options-8 .selected {
+  background-color: #6c210c;
+  color: #fff;
 }
 
-.progress-bar-5 {
+.progress-bar-8 {
   width: 100%;
   height: 20px;
   background-color: rgba(99, 68, 68, 0.5);
@@ -63,14 +65,14 @@ body {
   margin-bottom: 10px;
 }
 
-.progress-5 {
+.progress-8 {
   width: 0;
   height: 100%;
   background-color: #6c210c;
   border-radius: 10px;
 }
 
-.question-box-5 {
+.question-box-8 {
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 5px;
@@ -80,17 +82,17 @@ body {
   font-family: Helvetica;
 }
 
-.question-container-5 {
+.question-container-8 {
   margin-bottom: 20px;
   background-color: transparent;
 }
 
-.question-5 {
+.question-8 {
   margin-bottom: 10px;
   color: #000;
 }
 
-.btn-container-5 {
+.btn-container-8 {
   text-align: center;
 }
 
@@ -105,11 +107,7 @@ button {
   font-family: Helvetica;
 }
 
-.score-container-5 {
+.score-container-8 {
   font-weight: bold;
   color: white;
-}
-img {
-  height: 300px;
-  width: 500px;
 }
