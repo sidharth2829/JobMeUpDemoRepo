@@ -71,7 +71,7 @@ def login():
         
         if user and user.check_password(password):
             session['email'] = user.email
-            return redirect('/')
+            return redirect('/2')
         else:
             return render_template('login.html', error='Invalid user')
 
@@ -80,6 +80,14 @@ def login():
 @app.route("/")
 def landing_page():
     return render_template('landing-page1.html')
+
+@app.route("/2")
+def landing_page2():
+    return render_template('landing-page2.html')
+
+@app.route("/3")
+def landing_page3():
+    return render_template('landing-page3.html')
 
 
 @app.route("/resume")
@@ -152,7 +160,7 @@ def pay():
         pdata=[amount, payment["id"]]
 
         return render_template("payment.html", pdata=pdata)
-    return redirect("/")
+    return redirect("/2")
 
 @app.route('/success', methods=["POST"])
 def success():
@@ -172,7 +180,7 @@ def success():
         if finalans:
             finalans.payment = True  # Set payment column to True
             db.session.commit()  # Commit the changes to the database
-        return redirect("/", code=301) #redirect to lp 3
+        return redirect("/3", code=301)
     return "Something Went Wrong Please Try Again"
 
 
