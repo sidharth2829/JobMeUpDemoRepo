@@ -9,7 +9,7 @@ body {
 .quiz-container-8 {
   /* max-width: 500px;
   max-height: 800px; */
-  width: 50rem;
+  width: 60rem;
   height: 35rem;
   margin: 50px auto;
   padding: 20px;
@@ -20,6 +20,7 @@ body {
   font-size: 20px;
   font-family: Helvetica;
   position: relative;
+  margin-left: 2rem;
   animation: animateleft 1s;
 }
 
@@ -39,12 +40,14 @@ body {
 }
 .options-8 button {
   margin: 0 0 2em 0;
-  width: 35rem;
-  height:3rem;
+  width: 15rem;
+  height:1.9rem;
   background-color: transparent;
   border: 1px solid #836255;
   color: #000;
-  margin-left: 3rem;
+  margin-left: 32rem;
+  position: relative;
+  top: -250px;
   font-size: 18px;
   border-radius: 5px;
   font-family: Helvetica;
@@ -90,6 +93,7 @@ body {
 .question-container-8 {
   margin-bottom: 20px;
   background-color: transparent;
+  width: 60rem;
 }
 
 .question-8 {
@@ -99,7 +103,7 @@ body {
 
 .btn-container-8 {
   text-align: center;
-  margin-top: -5%;
+  margin-top: -24%;
 }
 
 button {
@@ -209,7 +213,7 @@ button {
   position: relative;
   color: #9575CD;
   text-decoration: none;
-  margin-top: 10rem;
+  margin-top: 23rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: #D1C4E9 1px 0 10px;
@@ -259,13 +263,15 @@ button {
   background-color: rgb(37 38 41);;
   border: none;
   /* padding: 20px; */
-  width: 200px;
+  width: 125px;
   height: 2rem;
   text-align: center;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   text-decoration: none;
   overflow: hidden;
+  position: relative;
+  top: -10rem;
 }
 
 #submit-btn-8:hover{
@@ -293,3 +299,15 @@ button {
   opacity: 1;
   transition: 0s
 }
+.quiz-container-8 img {
+  display: block;
+  margin-top: 10%;
+  width: 50%;
+  height: 40%;
+  height: auto;
+  max-width: 100%;
+}
+ul{
+  list-style-type: none;
+}
+

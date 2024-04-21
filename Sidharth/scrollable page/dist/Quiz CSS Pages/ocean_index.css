@@ -40,7 +40,7 @@ body {
 .option-btn-4 {
   margin: 0 0 2em 0;
   width: 35rem;
-  height:3rem;
+  height:2.4rem;
   background-color: transparent;
   border: 1px solid #836255;
   color: #000;
@@ -259,7 +259,7 @@ body {
   background-color: rgb(37 38 41);;
   border: none;
   /* padding: 20px; */
-  width: 200px;
+  width: 125px;
   height: 2rem;
   text-align: center;
   -webkit-transition-duration: 0.4s; /* Safari */
